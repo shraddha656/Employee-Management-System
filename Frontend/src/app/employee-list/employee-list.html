@@ -1,0 +1,28 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Salary</th>
+            <th>Action</th>
+        </tr>
+        
+    </thead>
+    <tbody>
+  @for (emp of employees; track emp.id) {
+    <tr>
+      <td>{{ emp.id }}</td>
+      <td>{{ emp.firstName }}</td>
+      <td>{{ emp.lastName }}</td>
+      <td>{{ emp.salary }}</td>
+      <td>
+        <button (click)="updateEmployee(emp.id)" class="btn btn-info">Update</button>
+        <button (click)="deleteEmployee(emp.id)" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+        <button (click)="viewEmployee(emp.id)" class="btn btn-info" style="margin-left: 10px;">View</button>
+      </td>
+    </tr>
+  }
+</tbody>
+
+</table>
